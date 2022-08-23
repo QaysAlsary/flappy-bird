@@ -23,7 +23,7 @@ alignment: Alignment((2*barrierX+barrierWidth)/(2-barrierWidth),isThisBottomBarr
       child: Container(
         decoration: BoxDecoration(
           color: Colors.green,
-          border: Border.all(width: 10,color: Color(0xC10D8E04)),
+          border: Border.all(width: 10,color: const Color(0xC10D8E04)),
           borderRadius: BorderRadius.circular(10)
         ),
       width: MediaQuery.of(context).size.width*barrierWidth /2,

@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flappy_bird_game/barriers.dart';
 import 'package:flappy_bird_game/bird.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -56,7 +55,7 @@ class _HomePageState extends State<HomePage> {
 
   void startGame() {
     gameHasStarted = true;
-    Timer.periodic(Duration(milliseconds: 50), (timer) {
+    Timer.periodic(const Duration(milliseconds: 50), (timer) {
       time += 0.04;
       height = -4.9 * time * time + 3 * time;
       setState(() {
@@ -103,7 +102,7 @@ class _HomePageState extends State<HomePage> {
         builder: (BuildContext context) {
           return AlertDialog(
             backgroundColor: Colors.brown,
-            title: Center(
+            title: const Center(
               child: Text(
                 "G A M E  O V E R ",
                 style: TextStyle(color: Colors.white),
@@ -115,9 +114,9 @@ class _HomePageState extends State<HomePage> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(5),
                   child: Container(
-                    padding: EdgeInsets.all(7),
+                    padding: const EdgeInsets.all(7),
                     color: Colors.white,
-                    child: Text(
+                    child: const Text(
                       "PLAY AGAIN",
                       style: TextStyle(color: Colors.brown),
                     ),
@@ -149,17 +148,17 @@ class _HomePageState extends State<HomePage> {
                     AnimatedContainer(
                       alignment: Alignment(0, birdYaxis),
                       color: Colors.blue,
-                      duration: Duration(milliseconds: 0),
+                      duration: const Duration(milliseconds: 0),
                       child: MyBird(birdY: birdYaxis,
                       birdWidth: birdWidth,
                         birdHeight: birdHeight,
                       ),
                     ),
                     Container(
-                      alignment: Alignment(0, -0.3),
+                      alignment: const Alignment(0, -0.3),
                       child: gameHasStarted
-                          ? Text("")
-                          : Text(
+                          ? const Text("")
+                          : const Text(
                               "T A P   TO   P L A Y",
                               style:
                                   TextStyle(fontSize: 20, color: Colors.white),
@@ -167,7 +166,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     AnimatedContainer(
                       alignment: Alignment(barrierXone, 1.1),
-                      duration: Duration(milliseconds: 0),
+                      duration: const Duration(milliseconds: 0),
                       child: MyBarrier(
                         barrierX: barrierX[0],
                         barrierWidth: barrierWidth,
@@ -178,7 +177,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     AnimatedContainer(
                       alignment: Alignment(barrierXone, -1.1),
-                      duration: Duration(milliseconds: 0),
+                      duration: const Duration(milliseconds: 0),
                       child:MyBarrier(
                         barrierX: barrierX[0],
                         barrierWidth: barrierWidth,
@@ -189,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     AnimatedContainer(
                       alignment: Alignment(barrierXtwo, 1.1),
-                      duration: Duration(milliseconds: 0),
+                      duration: const Duration(milliseconds: 0),
                       child: MyBarrier(
                         barrierX: barrierX[1],
                         barrierWidth: barrierWidth,
@@ -200,7 +199,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     AnimatedContainer(
                       alignment: Alignment(barrierXtwo, -1.1),
-                      duration: Duration(milliseconds: 0),
+                      duration: const Duration(milliseconds: 0),
                       child: MyBarrier(
                         barrierX: barrierX[1],
                         barrierWidth: barrierWidth,
@@ -220,7 +219,7 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.brown,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
+                  children: const [
                    Text('C R E A T E D   BY   Q A Y S',
                      style: TextStyle(color: Colors.white, fontSize: 20),)
                   ],
